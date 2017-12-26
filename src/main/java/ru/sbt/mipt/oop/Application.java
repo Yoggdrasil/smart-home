@@ -1,12 +1,10 @@
 package ru.sbt.mipt.oop;
 
-import com.google.gson.Gson;
 import ru.sbt.mipt.oop.EventHandlers.DoorEventHandler;
 import ru.sbt.mipt.oop.EventHandlers.LightEventHandler;
+import ru.sbt.mipt.oop.SmartHomeDir.HomeReader;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import static ru.sbt.mipt.oop.SensorEventType.*;
 
@@ -14,9 +12,7 @@ public class Application {
 
     public static void main(String... args) throws IOException {
         // считываем состояние дома из файла
-        Gson gson = new Gson();
-        String json = new String(Files.readAllBytes(Paths.get("smart-home-1.js")));
-        SmartHome smartHome = gson.fromJson(json, SmartHome.class);
+        SmartHome smartHome = HomeReader.readFromJSON("smart-home-1.js");
 
         // начинаем цикл обработки событий
         SensorEvent event = getNextSensorEvent();
