@@ -1,6 +1,9 @@
 package smartHome.SmartHomeDir.Components;
 
-public class Door {
+import smartHome.SmartHomeDir.Action;
+import smartHome.SmartHomeDir.Actionable;
+
+public class Door implements Actionable{
     private final String id;
     private boolean isOpen;
 
@@ -19,5 +22,10 @@ public class Door {
 
     public void setOpen(boolean open) {
         isOpen = open;
+    }
+
+    @Override
+    public void executeAction(Action action) {
+        action.execute(this);
     }
 }

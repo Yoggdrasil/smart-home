@@ -1,6 +1,9 @@
 package smartHome.SmartHomeDir.Components;
 
-public class Light {
+import smartHome.SmartHomeDir.Action;
+import smartHome.SmartHomeDir.Actionable;
+
+public class Light implements Actionable{
     private boolean isOn;
     private final String id;
 
@@ -9,15 +12,12 @@ public class Light {
         this.isOn = isOn;
     }
 
-    public boolean isOn() {
-        return isOn;
-    }
+    public boolean isOn() { return isOn; }
+    public String getId() { return id; }
+    public void   setOn(boolean on) { isOn = on; }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setOn(boolean on) {
-        isOn = on;
+    @Override
+    public void executeAction(Action action) {
+        action.execute(this);
     }
 }
