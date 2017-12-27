@@ -1,9 +1,8 @@
 package ru.sbt.mipt.oop.SmartHomeDir;
 
-import ru.sbt.mipt.oop.Door;
-import ru.sbt.mipt.oop.Light;
-import ru.sbt.mipt.oop.Room;
-import ru.sbt.mipt.oop.SmartHome;
+import ru.sbt.mipt.oop.SmartHomeDir.Components.Door;
+import ru.sbt.mipt.oop.SmartHomeDir.Components.Light;
+import ru.sbt.mipt.oop.SmartHomeDir.Components.Room;
 
 import java.io.IOException;
 import java.util.Arrays;

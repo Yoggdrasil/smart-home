@@ -1,6 +1,6 @@
-package ru.sbt.mipt.oop;
+package ru.sbt.mipt.oop.SmartHomeDir;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow;
+import ru.sbt.mipt.oop.SmartHomeDir.Components.Room;
 
 import java.util.ArrayList;
 import java.util.Collection;

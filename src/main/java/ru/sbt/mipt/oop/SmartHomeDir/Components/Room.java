@@ -1,4 +1,7 @@
-package ru.sbt.mipt.oop;
+package ru.sbt.mipt.oop.SmartHomeDir.Components;
+
+import ru.sbt.mipt.oop.SmartHomeDir.Components.Door;
+import ru.sbt.mipt.oop.SmartHomeDir.Components.Light;
 
 import java.util.Collection;
 

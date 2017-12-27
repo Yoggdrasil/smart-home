@@ -1,15 +1,17 @@
-package ru.sbt.mipt.oop.EventHandlers;
+package ru.sbt.mipt.oop.EventProcessors;
 
-import ru.sbt.mipt.oop.*;
+import ru.sbt.mipt.oop.Events.CommandType;
+import ru.sbt.mipt.oop.Events.SensorCommand;
+import ru.sbt.mipt.oop.SmartHomeDir.Components.Light;
+import ru.sbt.mipt.oop.SmartHomeDir.Components.Room;
+import ru.sbt.mipt.oop.SmartHomeDir.SmartHome;
 
-public class ClosedDoorHandler {
+public class ClosedDoorScenarioRunner {
     private static void sendCommand(SensorCommand command) {
         System.out.println("Pretend we're sending a command " + command);
     }
 
-    public static void handle(Door door, Room room, SmartHome smartHome){
-        door.setOpen(false);
-        System.out.println("Door " + door.getId() + " in room " + room.getName() + " was closed.");
+    public static void start(Room room, SmartHome smartHome){
         // если мы получили событие о закрытие двери в холле - это значит, что была закрыта входная дверь.
         // в этом случае мы хотим автоматически выключить свет во всем доме (это же умный дом!)
         if (room.getName().equals("hall")) {

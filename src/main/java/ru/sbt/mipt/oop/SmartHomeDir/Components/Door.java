@@ -1,4 +1,4 @@
-package ru.sbt.mipt.oop;
+package ru.sbt.mipt.oop.SmartHomeDir.Components;
 
 public class Door {
     private final String id;
@@ -7,6 +7,10 @@ public class Door {
     public Door(boolean isOpen, String id) {
         this.isOpen = isOpen;
         this.id = id;
+    }
+
+    public boolean is_open() {
+        return isOpen;
     }
 
     public String getId() {
